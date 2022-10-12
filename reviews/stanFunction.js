@@ -122,3 +122,5 @@
 // const newSum = (num1,num2) =>  num1 + num2;
 
 // console.log(newSum(2,4) + sum(30,50))
+
+// tasks 
