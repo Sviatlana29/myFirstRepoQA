@@ -186,6 +186,7 @@
 //     console.log(val)
 // }
 
+
 // const str = 'dadsadsadsafas'
 // const obj = {}
 // for(let i = 0; i <str.length;i++){

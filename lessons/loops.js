@@ -75,6 +75,8 @@ let arr = [1, "apple", null, 4, undefined];
 // }
 // console.log(summ);
 
+
+
 // let fruits = ['apple', 'orange', 'plum'];
 // for (let fruit of fruits) {
 //     if (fruit == 'plum') {

@@ -34,6 +34,7 @@
 // console.log(string)
 // console.log(b) // show deleted element
 
+
 //ex. 5 ____ ... - spread operator
 // const letter = ['a', 'b', 'c']
 // const bigLetters = ['A', 'B', 'C']

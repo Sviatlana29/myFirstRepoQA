@@ -68,9 +68,9 @@
 // console.log(arr[1][2][1]);
 // console.log(arr[3][1]);
 
-/////_8 проверка пустой массив
-// let arr2 = []
-// if (arr2.length == 0) {
-//     console.log('it is empty')
-// }
+///_8 проверка пустой массив
+let arr2 = []
+if (arr2.length == 0) {
+    console.log('it is empty')
+}
 
