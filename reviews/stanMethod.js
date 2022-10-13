@@ -70,9 +70,30 @@
 // //ex3 _______ concat
 // let arr1 = [2, 3, 4, 5,];
 // let arrStr = ['wr', 'rt', 're']
+// let arr = [1, 2];
 
 // let newArr = arrStr.concat(arr, arr1) // add all array in one array in order as arguments
 // console.log(newArr)
+
+// // let arr = [1, 2];
+// // // create an array from: arr and [3,4]
+// // console.log( arr.concat([3, 4]) )
+
+// // let arrayLike = {
+// //   0: "something",
+// //   length: 1
+// // };
+
+// // console.log( arr.concat(arrayLike) ); 
+
+// let arrayLike = {
+//   0: "something",
+//   1: "else",
+//   [Symbol.isConcatSpreadable]: true,
+//   length: 2
+// };
+
+// console.log( arr.concat(arrayLike) );
 
 // // ex4 _____ reverse
 // let arr1 = [2, 3, 4, 5,'str', true, null, NaN];
@@ -85,7 +106,15 @@
 // console.log(arr);
 // let newSrt = arr.join(',') // from array to massive - take  elements from array to string  using ' ' how to join
 // console.log(newSrt);
-
+//  let names = 'Bilbo, Gandalf, Nazgul';
+// let arr = names.split(', ');
+// for (let name of arr) {
+//     console.log( `A message to ${name}.` ); // A message to Bilbo  (and other names)
+// }
+// let arr2 = 'Bilbo, Gandalf, Nazgul, Saruman'.split(', ', 2);
+// console.log(arr2);
+// let str = arr2.join(';'); // glue the array into a string using ;
+// console.log( str );
 
 // //ex 6 _______ .slice([start],[end])
 // let str = 'Hello World!'
@@ -102,7 +131,6 @@
 // const newArr = arr.splice(1, 3, 'E', 'L','L','$', 1 ,true); // - change/replace/add the values of array from index
 // console.log(newArr); // show what was deleted
 // console.log(arr);
-
 // let arr = [1, 2, 3, 3, 7]
 // arr.splice(3, 0, 4, 5, 6 ) //if do not want to delete el add 0
 // // arr.splice(3, 1, 4, 5, 6 ) 
@@ -128,23 +156,61 @@
 // arr.push(NaN)
 //  console.log(arr.includes(NaN));
 // console.log(NaN === NaN) // not equal 
+// let arr = [1, 0, false];
+// console.log( arr.indexOf(0) ); // 1
+// console.log( arr.indexOf(false) ); // 2
+// console.log( arr.indexOf(null) ); // -1
+// console.log( arr.includes(1) ); // true
+// let fruits = ['Apple', 'Orange', 'Apple']
+// console.log( fruits.indexOf('Apple') ); // 0 (first Apple)
+// console.log( fruits.lastIndexOf('Apple') ); // 2 (last Apple)
+// const arr = [NaN];
+// console.log( arr.indexOf(NaN) ); // -1 (wrong, should be 0)
+// console.log( arr.includes(NaN) );// true (correct
 
 //ex.9 ______ .find(function(element, index, array) { ...}))
 // let arr =  [2, 3, 8, 10, 11]
 // // console.log(arr.find(el => el % 2 != 0)) // return the first elle which equal condition in func -  if not find - undefined
 //  console.log(arr.find((el, i) => i % 2 != 0 && el % 2 == 0)) // several condtions
+//  let users = [
+//     {id: 1, name: "John"},
+//     {id: 2, name: "Pete"},
+//     {id: 3, name: "Mary"}
+//   ];
+//   let user = users.find(item => item.id == 1);
+//   console.log(user.name); 
 
-//_____ .findIndex() 
+//_______________ .findIndex() 
 // let arr =  [2, 3, 8, 10, 11]
 // console.log(arr.findIndex(el => el % 2 != 0)) //  not find - return -1 or find - return number of index which equal condition in func
+// let users = [
+//     {id: 1, name: "John"},
+//     {id: 2, name: "Pete"},
+//     {id: 3, name: "Mary"},
+//     {id: 4, name: "John"}
+//   ];
+  
+//   // Find the index of the first John
+//   console.log(users.findIndex(user => user.name == 'John')); // 0
+  
+//   // Find the index of the last John
+//   console.log(users.findLastIndex(user => user.name == 'John')); // 3
 
-//ex.10 ______.filter((element, index, array) => { ...}))
+//ex.10 ___________.filter((element, index, array) => { ...}))
 // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 // let arrOdd = arr.filter(el => el % 2 != 0)
-// console.log(arrOdd)// return  found elemets in array
+// console.log(arrOdd)// return changed array with  found elemets in array
 // const arr = [1, 'stry', 3, null, 5, true, 7, NaN, 9]
 // let newArr = arr.filter(el => typeof(el) == 'number')
 // console.log(newArr)//
+// let users = [
+//     {id: 1, name: "John"},
+//     {id: 2, name: "Pete"},
+//     {id: 3, name: "Mary"}
+//   ]; 
+//   // returns array of the first two users
+//   let someUsers = users.filter(item => item.id < 3);  
+//   console.log(someUsers.length);
 
 // ex11 ______ .every((element, index, array) => { ...}))
 //  const arr = [1, 2, 3, 4, 5, 6, -7, 8, 9])
@@ -163,16 +229,96 @@
 //     return Math.min(...s.split(" ").map (s => s.length));
 // }
 // function maxDiff(list) {
-  
 //     // return list.sort((a,b) => b - a).reduce((dif, el, ind, arr) => ind == 0 ? dif + el: ind == arr.length - 1 ? dif - el: dif, 0)
 //    };
 
-// 10/06/200______forEach(number, index, array => ())
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-// const changeSign = function(el) {
-//     console.log(-el)
-// }
- //arr.forEach( el => console.log(-el) ) //callback function inside for each elements but method return nothing only do inside
- arr.forEach( (el, i) => i % 2 == 0 ? console.log(-el) : console.log("odd") ) 
+// 10/06/200______
+//_______________forEach(number, index, array => ())
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// // const changeSign = function(el) {
+// //     console.log(-el)
+// // }
+//  //arr.forEach( el => console.log(-el) ) //callback function inside for each elements but method return nothing only do inside
 //  arr.forEach( (el, i) => i % 2 == 0 ? console.log(-el) : console.log("odd") ) 
- arr.forEach( (el, i, newArr) => i % 2 != 0 ? console.log((el ** 2) + newArr.length) : console.log(" ") ) 
+// //  arr.forEach( (el, i) => i % 2 == 0 ? console.log(-el) : console.log("odd") ) 
+//  arr.forEach( (el, i, newArr) => i % 2 != 0 ? console.log((el ** 2) + newArr.length) : console.log(" ") ) 
+// ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+//     console.log(`${item} is at index ${index} in ${array}`);
+//   });
+
+
+//_______ .sort() - change and return new array
+// const arr = ['Anna', 'Steve', 'Jane', 'Pete']
+// const arrNum = [1, 30, 12, 45, 89, 40, 5]
+// console.log(arr.sort()) // in asc - in alphabetic - by default
+// console.log(arr.sort().reverse()) // in desc
+// console.log(arrNum.sort()) // in asci code - in alphabetic if it is number
+// console.log(arrNum.sort((a,b) => a - b)) // from min to max
+// console.log(arrNum.sort((a,b) => b - a)[0]) //  max array element
+// function compareNumeric(a, b) {
+//     if (a > b) return 1;
+//     if (a == b) return 0;
+//     if (a < b) return -1;
+//   }
+//   let arr3 = [ 1, 2, 15 ];
+//   arr3.sort(compareNumeric);
+//   console.log(arr3);  // 1, 2, 15
+// let countries = ['Österreich', 'Andorra', 'Vietnam']; // sort letters in strings
+// console.log( countries.sort( (a, b) => a > b ? 1 : -1) ); // Andorra, Vietnam, Österreich (wrong)
+// console.log( countries.sort( (a, b) => a.localeCompare(b) ) ); // Andorra,Österreich,Vietnam (correct!)
+
+  //_____________map((item, index, array) => {}) // change array and return the result of callback func
+//   const arr = ['JS', 'JAva', 'Python', 'English', 'SQL']
+//   const arrNum  = [1, 30, 12, 45, 89, 40, 5]
+//   const arrNum1  = ['1', '30', '12', '45']
+// //   console.log(arr.map(el => el.length))
+// //   console.log(arr.map((el, i, arr) => i == 0 || i == (arr.length - 1) ? `**${el}**`: el))
+//   const newArrr = arrNum.map(item => item ** 2)
+//   console.log(newArrr)
+//   const newArr = arrNum1.map(item => Number(item))
+//   console.log(newArr)
+//   let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+//   console.log(lengths);
+
+//_______________reduce((accumulator, item, index, array => {...} , [initial value]) -from eft to the right
+//_______________   reduceRight() - going from right to the left
+// const arr = ['JS', 'JAva', 'Python', 'English', 'SQL']
+// const arrNum  = [1, 30, 12, 45, 89, 40, 5]
+// let sum = arrNum.reduce((acc, el) =>  acc + el) // return one value as result on some actions with array
+// console.log(sum) 
+// console.log(arrNum.reduce((prod, el, _ , array) =>  (prod  * el) / array.length)) // _ if do need order in parametrs, but have to follow order
+// console.log(arrNum.reduce((acc, el, i , arr) =>  i === (arr.length - 1) ? (acc  + el) / arr.length : acc  + el, 0 )) 
+// console.log(arrNum.reduce((acc, el, i , arr) => acc  + el / arr.length , 0 )) // the same as above
+// console.log(arrNum.reduce((acc, el, i , arr) => acc  + el , 0 ) / arrNum.length) // the same as above
+
+
+//__________________ Array.from(number, ).fill() ___ .keys()  - // create aray on given values
+//const arr = Array.from('JavaScript') // create aray most of time String
+//const arr = Array.from('1,3,4,5,6')
+// const arr1 = Array(20)
+// console.log(arr1)
+// const arr = Array.from(20) 
+// console.log(arr)
+// const arr = Array.from(Array(20).fill('str')) // which value will insert
+// console.log(arr)
+// const arr2 = Array.from(Array(20).keys()) // number from 0 till 19
+// console.log(arr2)
+// let n = 20
+// const arr2 = Array.from(Array(n + 1).keys()) // number from 0 till 20
+// console.log(arr2)
+// let start = 10
+// let finish = 25
+// //const arr2 = Array.from(Array(finish - start + 1).fill(start),(el, i) => el + i) // build inside map thod when use ','
+// const arr2 = Array.from(Array(finish - start + 1).fill(start).map((el, i) => el + i)) // the same as above
+// console.log(arr2)
+// console.log([...Array(11).keys()]) // create array
+
+// //__________Array.of()
+// const arr = Array.of(10,23,45,67, 'anna', true, null)
+// console.log(arr)
+
+//_____Array.isArray() -  if it is array return true or false
+// let arr = Array.of(10,23,45,67, 'anna', true, null)
+// console.log(arr)
+// // arr = null
+// console.log(Array.isArray(arr))

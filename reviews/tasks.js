@@ -1,14 +1,31 @@
+// camelize("background-color") == 'backgroundColor';
+// camelize("list-style-image") == 'listStyleImage';
+// camelize("-webkit-transition") == 'WebkitTransition';
+// let camelize = str => str.split('-').map((word, index) => index == 0 ? word: word[0].toUpperCase() + word.slice(1)).join('')
+// console.log(camelize("-webkit-transition"))
 
- let n = 3
- let stair = ''
- for (let i = 1; i < n; i++){
-  stair += 'I' + '\n'
- }
-for(let j = 0; j< n; j++){
-     stair += " "
-   }
+//__2
+// let arr = [5, 3, 8, 1];
+// let filterRange = (arr, a, b) => { return arr.filter((el) =>  el >= a && el <= b)}
+// console.log(filterRange(arr, 1, 4))
+//__3
+let arr = [5, 3, 8, 1];
+let filterRangeInPlace = (arr, a, b) => { return arr.filter((el) =>  el >= a && el <= b)}
+//let filter = arr.map((el, i , arr) => {arr[i] })
+console.log(filterRange(arr, 1, 4))
 
- console.log(stair + 'I')
+
+
+//  let n = 3
+//  let stair = ''
+//  for (let i = 1; i < n; i++){
+//   stair += 'I' + '\n'
+//  }
+// for(let j = 0; j< n; j++){
+//      stair += " "
+//    }
+
+//  console.log(stair + 'I')
 
 
 
